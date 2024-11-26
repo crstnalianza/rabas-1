@@ -10,3 +10,25 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # Redirect all requests to index.html for client-side routing
 RewriteRule ^ index.html [L] 
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks -MultiViews
+    RewriteEngine On
+    
+    # Allow access to public directory
+    RewriteCond %{REQUEST_URI} !^/public/
+    
+    # Redirect everything to public folder
+    RewriteRule ^(.*)$ public/$1 [L]
+    
+    # If file doesn't exist, redirect to index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ public/index.php [L]
+    
+    # Explicitly allow access to the directory
+ 
+        Require all granted
+        Allow from all
+    </Directory>
+</IfModule>
