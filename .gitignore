@@ -1,0 +1,18 @@
+# Ignore .env file (environment variables)
+.env
+
+# Node modules (for Node.js projects)
+node_modules/
+
+# Mac OS files
+.DS_Store
+
+# IDE files (e.g., VSCode, JetBrains)
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Operating system files
+Thumbs.db
