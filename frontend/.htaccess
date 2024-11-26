@@ -1,0 +1,15 @@
+# Enable the rewrite module  
+RewriteEngine On  
+
+# Set the base directory for the rewrites  
+RewriteBase /  
+
+# If the request is not for an existing directory or file  
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_FILENAME} !-d  
+
+# Example: Redirect requests for /external to external.html
+RewriteRule ^external/?$ external.html [L]
+
+# Rewrite all other requests to index.html  
+RewriteRule ^.*$ index.html [L]

@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Rubik+Lines&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* Custom styles for Swiper arrow buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-color3 bg-color1 w-10 h-10 flex items-center justify-center rounded-full shadow-md;
+  font-size: 16px; /* Adjust the font size for better visibility */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  position: absolute; /* Position them absolutely */
+  top: 50%; /* Center vertically */
+/* Adjust for centering */
+  z-index: 50; /* Ensure they are above other elements */
+}
+
+.swiper-button-next {
+  right: 1; /* Position at the rightmost edge */
+}
+
+.swiper-button-prev {
+  left: 1; /* Position at the leftmost edge */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  @apply bg-color2; /* Change background color on hover */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px; /* Adjust icon size */
+  color: inherit; /* Use the inherited text color */
+}
+
+
+/* Custom styles for Swiper pagination dots */
+.swiper-pagination-bullet {
+  @apply bg-gray-400 w-2 h-2 opacity-100 mt-32;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-color2   ;
+}
+
+/* Move pagination dots below the Swiper */
+.swiper-pagination {
+  @apply mt-6; /* Adds margin to move pagination further down */
+  position: relative;
+  bottom: -20px; /* Adjust as needed to move pagination further below */
+}
+
+
+/* Custom Scrollbar Styles */  
+
+.scrollbar-custom::-webkit-scrollbar {  
+  width: 8px; 
+  background: transparent; 
+}  
+
+.scrollbar-custom::-webkit-scrollbar-thumb {  
+  background: #888; 
+  border-radius: 10px; 
+}  
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {  
+  background: #555; 
+}  
+
+.scrollbar-custom {  
+  scrollbar-width: thin;   
+  scrollbar-color: #888 transparent; 
+}  
+
+
+.scrollbar-custom:hover {  
+  scrollbar-color: #555 transparent; 
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+.slick-prev, .slick-next {
+ 
+  z-index: 2;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for centering */
+}
+
+.slick-prev {
+  left: 0px; /* Adjust the left position */
+}
+
+.slick-next {
+  right: 0px; /* Adjust the right position */
+}
+
+
+
+.slick-prev:before, .slick-next:before {
+  font-size: 40px;
+  color:#092635;
+}
+@keyframes expand {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 200px;
+  }
+}
+
+@keyframes collapse {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 50px;
+  }
+}
+
+.expand {
+  animation: expand 1s forwards;
+}
+
+.collapse {
+  animation: collapse 1s forwards;
+}
+.business-name {
+  position: relative;
+  width: 50px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the bottom */
+  flex-direction: column;
+  /* background-color: #fff; */
+  /* padding-bottom: 5px; Optional: Add padding for spacing */
+}
+.pin-container {
+  position: relative;
+  width: 50px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pin-head {
+  padding: 10%;
+  width: 50px;
+  height: 55px;
+  background-color: #f472b6; 
+  border-radius: 50%; /* Circular top */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  overflow: hidden; /* Ensure logo stays inside the circle */
+}
+
+.pin-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.pin-point {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #f472b6; /* Triangle shape for the pin point */
+  margin-top: -5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow to match head */
+}
