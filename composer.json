@@ -1,0 +1,15 @@
+{
+    "name": "cristina/rabas-rabas",
+    "autoload": {
+        "psr-4": {
+            "Cristina\\RabasRabas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tinalianza",
+            "email": "alianzacristina@gmail.com"
+        }
+    ],
+    "require": {}
+}
